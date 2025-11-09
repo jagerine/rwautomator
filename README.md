@@ -1,6 +1,10 @@
-# infra-scoautomata
-Script for automating actions in SCO/RW as a telnet user
+# Infrastructure RealWorld / SCO Automator
+
+Script for automating actions in Realworld as a telnet user.
+
+Uses python with pexpect to perform keystrokes in SCO session. Single page html UI.
+
+For testing:
 
 Enter company number: 00 
-Enter customer number: 005168765360
-Enter order number: 408516
+Enter order number: 507907
