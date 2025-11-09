@@ -1,0 +1,6 @@
+pyodbc==5.0.1
+configparser==6.0.0
+python-dotenv==1.0.0
+pexpect==4.9.0
+python3-saml>=1.15.0
+Flask>=2.3.0

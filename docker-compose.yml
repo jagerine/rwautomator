@@ -1,0 +1,30 @@
+services:
+  api:
+    container_name: autosco-api
+    build:
+      context: .
+      dockerfile: docker/python/Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - ./app:/app
+      - ./logs:/app/process-logs:rw
+      - ./saml:/app/saml
+    command: ["python3", "/app/interface.py"]
+
+  worker:
+    container_name: autosco-worker
+    build:
+      context: .
+      dockerfile: docker/python/Dockerfile
+    stdin_open: true
+    tty: true
+    env_file:
+      - .env
+    volumes:
+      - ./app:/app
+      - ./logs:/app/process-logs:rw
+      - ./saml:/app/saml
+    command: ["python3", "/app/worker.py"]
